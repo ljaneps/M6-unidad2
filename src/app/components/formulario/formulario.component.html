@@ -1,0 +1,13 @@
+<p style="color: #8001c6; font-size: 2rem;">Formulario</p>
+
+<form [formGroup]="form">
+  <input formControlName="nombre" placeholder="Nombre">
+  <input formControlName="apellidos" placeholder="Apellido">
+  <input formControlName="ciudad" placeholder="Ciudad">
+  <br>
+  <input formControlName="edad" placeholder="Edad" type="number">
+  <input formControlName="profesion" placeholder="profesion">
+  <input formControlName="email" placeholder="Email">
+
+  <button [disabled]="!form.valid" (click)="enviar()">Enviar</button>
+</form>

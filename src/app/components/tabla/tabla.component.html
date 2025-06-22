@@ -1,0 +1,27 @@
+<p style="color: #8001c6; font-size: 2rem;"> Componente Tabla</p>
+
+<button (click)="toggleVista()">Cambiar vista</button>
+<br>
+
+<table border="1" class="table table-striped">
+  <thead [ngStyle]="cambiar ? {'color': '#8001c6', 'font-size': '20px'} : {}">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th *ngIf="!cambiar">Ciudad</th>
+      <th *ngIf="!cambiar">Edad</th>
+      <th *ngIf="!cambiar">Profesión</th>
+      <th *ngIf="!cambiar">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.apellidos }}</td>
+      <td *ngIf="!cambiar">{{ usuario.ciudad }}</td>
+      <td *ngIf="!cambiar">{{ usuario.edad }}</td>
+      <td *ngIf="!cambiar">{{ usuario.profesion}}</td>
+      <td *ngIf="!cambiar">{{ usuario.email}}</td>
+    </tr>
+  </tbody>
+
